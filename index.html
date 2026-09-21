@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Brief d'offre, indemnités journalières et activité non autorisée</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue-primary:#11a9e6;
+    --blue-dark:#00456d;
+    --text-dark:#0f172a;
+    --text-gray:#6b7280;
+    --text-light:#9ca3af;
+    --bg-white:#ffffff;
+    --bg-light:#f8fafc;
+    --bg-subtle:#eef2f6;
+    --soft-blue:rgba(17,169,230,0.10);
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Lato',-apple-system,sans-serif;
+    color:var(--text-dark);
+    background:var(--bg-light);
+    margin:0;
+    font-size:15px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    max-width:940px;
+    margin:0 auto;
+    background:var(--bg-white);
+    padding:42px 52px 52px;
+  }
+
+  /* Header */
+  .doc-head{
+    border-bottom:3px solid transparent;
+    border-image:linear-gradient(90deg,#0fa7e2,#0ab38c) 1;
+    padding-bottom:22px;
+    margin-bottom:34px;
+  }
+  .eyebrow{
+    font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+    color:var(--blue-primary);margin:0 0 8px;
+  }
+  h1{
+    font-size:34px;font-weight:700;color:var(--blue-dark);
+    margin:0 0 10px;line-height:1.25;
+  }
+  .sub{font-size:17px;font-weight:400;color:var(--text-gray);margin:0 0 18px;}
+  .meta{display:flex;flex-wrap:wrap;gap:26px;font-size:13px;}
+  .meta div{min-width:120px;}
+  .meta .k{
+    display:block;font-size:11px;font-weight:700;letter-spacing:.5px;
+    text-transform:uppercase;color:var(--text-light);margin-bottom:2px;
+  }
+  .meta .v{font-weight:600;color:var(--text-dark);}
+
+  /* Sections */
+  h2{
+    font-size:22px;font-weight:700;color:var(--blue-dark);
+    margin:36px 0 6px;padding-top:4px;
+  }
+  h2 .num{
+    display:inline-block;min-width:30px;font-weight:300;color:var(--blue-primary);
+  }
+  .section-note{
+    font-size:13px;color:var(--text-gray);margin:0 0 18px;max-width:720px;
+  }
+  h3{
+    font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
+    color:var(--blue-primary);margin:22px 0 6px;
+  }
+  p{margin:0 0 12px;}
+  ul{margin:0 0 12px;padding-left:20px;text-align:left;}
+  li{margin-bottom:6px;text-align:left;}
+
+  /* Cards */
+  .card{
+    background:var(--bg-light);
+    border:1px solid var(--bg-subtle);
+    border-radius:10px;
+    padding:18px 22px;
+    margin-bottom:12px;
+  }
+  .card.accent{
+    background:var(--soft-blue);
+    border-color:rgba(17,169,230,.25);
+  }
+  .card h4{
+    font-size:15px;font-weight:700;color:var(--blue-dark);margin:0 0 6px;
+  }
+  .card p:last-child{margin-bottom:0;}
+
+  .row{display:flex;gap:12px;align-items:stretch;margin-bottom:12px;}
+  .row > .card{flex:1;margin-bottom:0;}
+
+  /* Quote */
+  .quote{
+    border-left:3px solid var(--blue-primary);
+    padding:4px 0 4px 20px;margin:0 0 12px;
+  }
+  .quote p{font-size:17px;font-weight:400;font-style:italic;color:var(--text-dark);margin:0 0 6px;}
+  .quote .who{font-size:13px;font-weight:600;color:var(--text-gray);font-style:normal;}
+
+  /* Legal facts */
+  .fact{
+    display:flex;gap:14px;padding:12px 0;
+    border-bottom:1px solid var(--bg-subtle);
+  }
+  .fact:last-child{border-bottom:none;}
+  .fact .ref{
+    flex:0 0 168px;font-size:12px;font-weight:700;color:var(--blue-dark);
+    line-height:1.45;
+  }
+  .fact .say{flex:1;font-size:14px;}
+  .fact .say .src{display:block;font-size:11px;color:var(--text-light);margin-top:3px;}
+
+  /* Chips, monochrome blue only per DESIGN.md */
+  .chip{
+    display:inline-block;font-size:11px;font-weight:700;letter-spacing:.4px;
+    text-transform:uppercase;padding:3px 9px;border-radius:20px;margin-right:6px;
+  }
+  .chip.solid{background:var(--blue-dark);color:#fff;}
+  .chip.light{background:var(--soft-blue);color:var(--blue-dark);}
+  .chip.grey{background:var(--bg-subtle);color:var(--text-gray);}
+
+  /* Chiffrage */
+  table.calc{
+    width:100%;border-collapse:collapse;font-size:13.5px;margin-bottom:14px;
+  }
+  table.calc th{
+    text-align:left;font-size:11px;font-weight:700;letter-spacing:.4px;
+    text-transform:uppercase;color:var(--text-light);
+    border-bottom:1px solid var(--bg-subtle);padding:6px 10px 6px 0;
+  }
+  table.calc th.num,table.calc td.num{text-align:right;white-space:nowrap;}
+  table.calc td{
+    padding:9px 10px 9px 0;border-bottom:1px solid var(--bg-subtle);vertical-align:top;
+  }
+  table.calc td.lab{font-weight:600;color:var(--blue-dark);}
+  table.calc tr.total td{
+    border-bottom:none;border-top:2px solid var(--blue-dark);
+    font-weight:700;color:var(--blue-dark);font-size:15px;padding-top:11px;
+  }
+  table.calc .basis{display:block;font-size:11.5px;color:var(--text-gray);font-weight:400;margin-top:2px;}
+  .conf{
+    display:inline-block;font-size:10px;font-weight:700;letter-spacing:.3px;
+    text-transform:uppercase;padding:2px 7px;border-radius:20px;
+    background:var(--bg-subtle);color:var(--text-gray);
+  }
+  .conf.low{background:var(--blue-dark);color:#fff;}
+
+  /* FAQ */
+  .qa{margin-bottom:16px;}
+  .qa .q{font-size:15px;font-weight:700;color:var(--blue-dark);margin:0 0 4px;}
+  .qa .a{margin:0;color:var(--text-dark);}
+  .qa .a.todo{color:var(--text-gray);font-style:italic;}
+
+  /* Decisions */
+  .decision{
+    display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--bg-subtle);
+  }
+  .decision:last-child{border-bottom:none;}
+  .decision .n{
+    flex:0 0 28px;font-size:22px;font-weight:300;color:var(--blue-primary);line-height:1.2;
+  }
+  .decision .body{flex:1;}
+  .decision .body strong{display:block;color:var(--blue-dark);margin-bottom:2px;}
+  .decision .body span{font-size:13px;color:var(--text-gray);}
+
+  @media screen and (max-width:700px){
+    .page{padding:24px 18px 36px;}
+    h1{font-size:26px;}
+    .row,.fact{flex-direction:column;}
+    .fact{gap:4px;}
+    .fact .ref{flex:none;}
+    table.calc{font-size:12px;}
+    table.calc th.num,table.calc td.num{white-space:normal;}
+  }
+
+  @media print{
+    body{background:#fff;font-size:11pt;line-height:1.6;}
+    .page{max-width:none;padding:0;}
+    @page{margin:22mm 20mm;}
+    h2{margin-top:30px;page-break-after:avoid;}
+    h3{page-break-after:avoid;}
+    /* Keep a heading glued to its intro, otherwise a title strands at a page foot. */
+    .section-note{page-break-after:avoid;}
+    .qa,.fact,.decision,.quote{page-break-inside:avoid;}
+    /* Short cards stay whole. The long accent card may split, otherwise it jumps
+       to the next page and leaves a third of the previous one blank. */
+    .card{page-break-inside:avoid;}
+    .card.accent{page-break-inside:auto;}
+    .doc-head{page-break-after:avoid;}
+    /* A4 minus margins is far narrower than the screen container, so the meta row
+       needs tighter columns or the fourth item orphans onto its own line. */
+    .meta{gap:20px;}
+    .meta div{min-width:96px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="doc-head">
+    <p class="eyebrow">Brief d'offre, méthode Working Backwards</p>
+    <h1>Indemnités journalières et activité non autorisée</h1>
+    <p class="sub">Ce que devient un arrêt de travail quand le salarié a travaillé pendant, et pourquoi la facture arrive chez l'employeur.</p>
+    <div class="meta">
+      <div><span class="k">Étape</span><span class="v">Formuler, avant G0</span></div>
+      <div><span class="k">Porteur</span><span class="v">À nommer</span></div>
+      <div><span class="k">Version</span><span class="v">v1, 27 juillet 2026</span></div>
+      <div><span class="k">Statut</span><span class="v">Proposition à challenger</span></div>
+    </div>
+  </div>
+
+  <h2><span class="num">1</span>Communiqué de presse interne</h2>
+  <p class="section-note">Écrit comme si l'offre existait déjà et qu'on l'annonçait. Si une section résiste, c'est le signal que l'offre n'est pas encore assez claire.</p>
+
+  <h3>Titre</h3>
+  <p><strong>Ayming accompagne les employeurs subrogés à qui la caisse réclame des indemnités journalières versées pour un salarié qui travaillait pendant son arrêt.</strong></p>
+
+  <h3>Sous-titre</h3>
+  <p>Pendant l'arrêt, le salarié perçoit des revenus de remplacement en contrepartie d'une obligation de se reposer. Exercer une activité fait tomber ce fondement. Depuis le 27 juin 2026, la caisse transmet à l'employeur les éléments caractérisant la fraude, et chez un employeur subrogé, c'est l'entreprise qu'elle fait rembourser.</p>
+
+  <h3>Le problème, vu du client</h3>
+  <div class="row">
+    <div class="card">
+      <h4>Il découvre la dette et les faits en même temps</h4>
+      <p>L'entreprise a avancé le salaire et encaissé les indemnités pendant tout l'arrêt. Le courrier lui apprend qu'elle doit les rendre.</p>
+    </div>
+    <div class="card">
+      <h4>Il récupère au compte-gouttes</h4>
+      <p>La retenue sur le salaire est plafonnée au dixième du net par prélèvement. Sur un arrêt long, l'entreprise porte l'avance pendant des mois.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card">
+      <h4>Le licenciement n'est pas la sortie</h4>
+      <p>Travailler pour une entreprise non concurrente ne suffit pas en soi. Il faut caractériser un préjudice réel et distinct.</p>
+    </div>
+    <div class="card">
+      <h4>Et l'horloge tourne</h4>
+      <p>Deux mois pour saisir la commission de recours amiable, à compter de la notification et non de la mise en demeure.</p>
+    </div>
+  </div>
+
+  <h3>La solution</h3>
+  <p>Ayming intervient à la réception du courrier. Vérification des sommes réclamées et de la période, reconstitution du dossier de paie et des régularisations DSN, puis démarches auprès de la caisse dans les délais. Le travail porte ensuite sur l'ensemble des conséquences financières, complément employeur, inaptitude éventuelle, contribution au financement de la prévoyance. Dès lors qu'une expertise juridique s'impose, il est fait appel à un cabinet d'avocats indépendants, choisi d'un commun accord.</p>
+  <p>Ayming ne détecte pas et n'enquête pas sur le salarié. La caractérisation des faits appartient à la caisse, la décision disciplinaire appartient à l'employeur.</p>
+
+  <h3>Citation client, fictive</h3>
+  <div class="quote">
+    <p>"On a reçu un courrier qui nous réclamait onze mois d'indemnités journalières. On avait maintenu le salaire, on avait touché les IJ, et du jour au lendemain on devait tout rendre. Personne chez nous ne savait par où commencer."</p>
+    <span class="who">DRH, transport, 900 salariés. À remplacer par un vrai client dès le premier dossier.</span>
+  </div>
+
+  <h3>La première étape pour le client</h3>
+  <p>Un premier examen du courrier reçu et des sommes réclamées, sans engagement. Format et délai à arrêter ensemble.</p>
+
+  <h2><span class="num">2</span>Ce que dit le droit</h2>
+  <p class="section-note">Chaque point ci-dessous a été lu sur sa source, pas repris d'un commentaire. C'est la matière première de l'offre et la raison pour laquelle elle tient.</p>
+
+  <div class="fact">
+    <div class="ref">Article L114-9 VI du code de la sécurité sociale</div>
+    <div class="say">En vigueur depuis le 27 juin 2026, les caisses transmettent à l'employeur les éléments nécessaires à la caractérisation d'une fraude d'un salarié aux indemnités journalières.
+      <span class="src">Le dossier arrive donc désormais chez le client, ce qui n'était pas systématique avant.</span></div>
+  </div>
+  <div class="fact">
+    <div class="ref">Cour de cassation, 2e civile, 16 février 2023, n° 20-23.241, publié au bulletin</div>
+    <div class="say">Chez un employeur subrogé, la caisse recouvre l'indu auprès de l'employeur. La prescription de deux ans court à compter de chaque versement reçu.
+      <span class="src">C'est le point qui fait de l'entreprise une débitrice et non un spectateur.</span></div>
+  </div>
+  <div class="fact">
+    <div class="ref">Article L3251-3 du code du travail</div>
+    <div class="say">La récupération d'un trop-perçu sur salaire est plafonnée au dixième du salaire net exigible, par prélèvements successifs.
+      <span class="src">Confirmé par Cass. soc., 3 novembre 2011, n° 10-16.660, qui censure une reprise en une seule fois.</span></div>
+  </div>
+  <div class="fact">
+    <div class="ref">Cour de cassation, chambre sociale, 26 février 2020, n° 18-10.017, publié au bulletin</div>
+    <div class="say">Exercer une activité pour une entreprise non concurrente pendant un arrêt ne constitue pas en soi un manquement à la loyauté, et le préjudice de l'employeur ne peut pas résulter du seul versement des indemnités complémentaires.
+      <span class="src">L'accompagnement disciplinaire garde tout son sens, à condition de caractériser un préjudice réel et distinct.</span></div>
+  </div>
+  <div class="fact">
+    <div class="ref">Résultats de la lutte contre la fraude, Assurance Maladie</div>
+    <div class="say">Fraudes détectées sur les arrêts de travail, 12,8 M€ en 2022, 42 M€ en 2024, 49 M€ en 2025.
+      <span class="src">À ne jamais confondre avec la fraude totale de la branche maladie, dont les arrêts représentent environ 7 %.</span></div>
+  </div>
+
+  <h2><span class="num">3</span>L'économie de l'offre</h2>
+  <p class="section-note">Tous les chiffres ci-dessous sont inventés, comme le veut la méthode, puisque l'offre n'existe pas. Chacun porte sa fourchette, ce sur quoi il repose et son niveau de confiance. Ils ne sont pas là pour être crus, ils sont là pour être attaqués ligne à ligne.</p>
+
+  <h3>Chiffre d'affaires annuel, construit par le bas</h3>
+  <table class="calc">
+    <tr>
+      <th>Variable</th><th class="num">Basse</th><th class="num">Base</th><th class="num">Haute</th><th>Confiance</th>
+    </tr>
+    <tr>
+      <td class="lab">Clients Ayming pratiquant la subrogation
+        <span class="basis">330 clients accompagnés, dont une part pratiquant la subrogation estimée entre 50 et 85 %. Base de départ réelle, part estimée.</span></td>
+      <td class="num">165</td><td class="num">230</td><td class="num">280</td>
+      <td><span class="conf">Moyenne</span></td>
+    </tr>
+    <tr>
+      <td class="lab">Notifications reçues par client et par an
+        <span class="basis">Aucune donnée publique. Jugement d'expert seul. C'est la variable qui décide de tout, voir la sensibilité plus bas.</span></td>
+      <td class="num">0,2</td><td class="num">0,5</td><td class="num">2,0</td>
+      <td><span class="conf low">Faible</span></td>
+    </tr>
+    <tr>
+      <td class="lab">Part des dossiers confiés à Ayming
+        <span class="basis">Jugement d'expert. Dépend fortement de la présence d'un accompagnement en cours chez le client.</span></td>
+      <td class="num">20 %</td><td class="num">40 %</td><td class="num">60 %</td>
+      <td><span class="conf low">Faible</span></td>
+    </tr>
+    <tr>
+      <td class="lab">Prix par dossier
+        <span class="basis">Déduit de 3 jours de production à un taux journalier chargé, calculé sur 120 à 160 jours réellement facturables et non sur 220.</span></td>
+      <td class="num">1 500 €</td><td class="num">2 500 €</td><td class="num">5 000 €</td>
+      <td><span class="conf">Moyenne</span></td>
+    </tr>
+    <tr class="total">
+      <td>Chiffre d'affaires annuel</td>
+      <td class="num">10 k€</td><td class="num">115 k€</td><td class="num">1 680 k€</td>
+      <td></td>
+    </tr>
+  </table>
+
+  <h3>Économie d'une mission</h3>
+  <table class="calc">
+    <tr><th>Poste</th><th class="num">Base</th><th>Sur quoi il repose</th></tr>
+    <tr><td class="lab">Production</td><td class="num">3 jours</td><td>Vérification de la subrogation, reconstitution des versements, démarches, régularisation de paie et plan de retenue</td></tr>
+    <tr><td class="lab">Coût interne chargé</td><td class="num">1 350 €</td><td>450 € par jour, taux chargé</td></tr>
+    <tr><td class="lab">Quote-part avocat</td><td class="num">240 €</td><td>800 € sur environ 30 % des dossiers</td></tr>
+    <tr><td class="lab">Prix</td><td class="num">2 500 €</td><td>Forfait par dossier, hypothèse de départ</td></tr>
+    <tr class="total"><td>Marge brute</td><td class="num">910 € soit 36 %</td><td>Dans la fourchette 20 à 40 % observée en conseil de niche</td></tr>
+  </table>
+
+  <h3>Investissement de départ et retour</h3>
+  <table class="calc">
+    <tr><th>Poste</th><th class="num">Base</th><th>Détail</th></tr>
+    <tr><td class="lab">Montée en compétence</td><td class="num">4 500 €</td><td>10 jours sur la procédure d'indu et la contestation</td></tr>
+    <tr><td class="lab">Convention avocat</td><td class="num">5 000 €</td><td>Cadrage et mise en place du partenariat</td></tr>
+    <tr><td class="lab">Outillage et trames</td><td class="num">3 600 €</td><td>8 jours, dossier type, process paie et DSN</td></tr>
+    <tr><td class="lab">Cadre de traitement des données salariés</td><td class="num">2 000 €</td><td>Sujet sensible, à ne pas sous-estimer</td></tr>
+    <tr class="total"><td>Total, fourchette 8 à 40 k€</td><td class="num">15 100 €</td><td>Retour en 4 à 5 mois au scénario de base</td></tr>
+  </table>
+
+  <div class="card accent">
+    <h4>Ce que ces chiffres disent, et c'est inattendu</h4>
+    <p>Au scénario de base, l'offre dégage environ 115 k€ de chiffre d'affaires et 41 k€ de marge brute par an. L'investissement se rembourse en quelques mois, donc la question n'est pas la rentabilité. La question est que 115 k€ ne justifient ni un porteur dédié ni une prospection propre.</p>
+    <p><strong>En revanche, adossée aux accompagnements IJSS et AT/MP déjà en place, l'offre est confortablement rentable</strong>, puisque le coût d'acquisition tombe à presque rien. Le chiffrage ne dit donc pas de renoncer, il dit de ne pas en faire une offre autonome.</p>
+    <p><strong>Une seule variable renverse ce raisonnement.</strong> Si la fréquence passe de 0,5 à 1,5 notification par client et par an, le chiffre d'affaires de base triple et l'offre tient debout seule. Toutes les autres hypothèses peuvent bouger du simple au double sans changer la conclusion.</p>
+  </div>
+
+  <h3>Ce qui doit être vrai pour que ça marche</h3>
+  <ul>
+    <li>Qu'un client type reçoive au moins une notification tous les deux ans, sinon il n'y a pas de flux.</li>
+    <li>Qu'un client accepte de payer séparément un dossier qu'il pourrait considérer comme inclus dans son accompagnement en cours.</li>
+    <li>Que la production tienne en 3 jours, sans dérive sur les dossiers où la caisse conteste.</li>
+    <li>Que le partenariat avocat se déclenche sur une minorité de dossiers seulement, faute de quoi la marge s'effondre.</li>
+  </ul>
+
+  <h3>Les trois scénarios d'échec les plus probables</h3>
+  <ul>
+    <li><strong>Le déclencheur ne se déclenche pas.</strong> La détection reste au cas par cas, les notifications sont rares, et l'offre n'a jamais de pipeline.</li>
+    <li><strong>Le client refuse de payer à part.</strong> Le dossier est vu comme relevant de l'accompagnement déjà facturé, et l'offre devient un geste commercial.</li>
+    <li><strong>La promesse dérive vers le disciplinaire.</strong> Le DRH attend une sanction, la jurisprudence l'en empêche, et le client juge la mission décevante quel que soit le résultat financier obtenu.</li>
+  </ul>
+
+  <h3>Comment lever le doute pour presque rien</h3>
+  <p>Demander à trois clients grands comptes déjà accompagnés en IJSS combien de notifications de ce type ils ont reçues sur les vingt-quatre derniers mois. La réponse tranche la variable dominante, donc l'offre, pour le coût de trois appels.</p>
+
+  <h2><span class="num">4</span>FAQ interne</h2>
+  <p class="section-note">Les questions difficiles, posées maintenant plutôt qu'au premier client. Quand la réponse n'existe pas encore, elle est marquée à trancher.</p>
+
+  <h3>Client et marché</h3>
+  <div class="qa">
+    <p class="q">Qui est le client cible ?</p>
+    <p class="a">Un employeur qui pratique la subrogation, avec un volume d'arrêts suffisant pour recevoir ce courrier plus d'une fois. Sans subrogation, la caisse réclame au salarié et l'entreprise n'a pas d'exposition financière directe. <span class="chip light">ICP unique</span></p>
+  </div>
+  <div class="qa">
+    <p class="q">Que fait-il aujourd'hui à la place ?</p>
+    <p class="a">Il traite en interne à la paie, il appelle un avocat une fois le délai déjà engagé, ou il ne fait rien jusqu'à la mise en demeure. Aucune de ces trois options n'est une offre constituée, ce qui laisse la place libre.</p>
+  </div>
+  <div class="qa">
+    <p class="q">Et les organismes de prévoyance ?</p>
+    <p class="a">Ils subissent le même fait mais leur recours vise le salarié, pas l'employeur, et sur un autre fondement. Le métier n'est pas le même et le canal non plus. Gardé de côté comme cible ultérieure possible plutôt que fondu dans cette offre. <span class="chip grey">Hors périmètre v1</span></p>
+  </div>
+
+  <h3>Économie</h3>
+  <div class="qa">
+    <p class="q">Quel est le modèle de pricing ?</p>
+    <p class="a">Hypothèse de travail, un forfait de 2 500 € par dossier, fourchette 1 500 à 5 000 €, adossé à trois jours de production. L'alternative est une rémunération au résultat sur les sommes non remboursées, qui n'attire pas les mêmes clients et n'engage pas la même responsabilité. Le forfait est retenu comme base parce qu'il se facture même lorsque la caisse maintient sa position, ce qui arrivera souvent.</p>
+  </div>
+  <div class="qa">
+    <p class="q">Quel investissement initial, et quand est-il remboursé ?</p>
+    <p class="a">Environ 15 000 €, fourchette 8 à 40 k€, réparti entre montée en compétence, convention avocat, outillage et cadre de traitement des données salariés. Au scénario de base il se rembourse en quatre à cinq mois. Le détail est en section 3.</p>
+  </div>
+  <div class="qa">
+    <p class="q">Quelle marge dégage une mission ?</p>
+    <p class="a">910 € pour un prix de 2 500 €, soit 36 %, coût interne chargé et quote-part avocat déduits. C'est dans la fourchette observée en conseil de niche. Elle s'effondre si le recours au cabinet d'avocats dépasse une minorité de dossiers.</p>
+  </div>
+
+  <h3>Exécution</h3>
+  <div class="qa">
+    <p class="q">Avons-nous l'expertise en interne ?</p>
+    <p class="a todo">À confirmer avec le porteur. Le volet paie et DSN est dans nos murs, le volet procédure devant la caisse est à cartographier.</p>
+  </div>
+  <div class="qa">
+    <p class="q">Comment on le vend, si le déclencheur est un courrier imprévisible ?</p>
+    <p class="a">C'est la difficulté commerciale principale et elle n'est pas résolue. Piste à discuter, adosser l'offre aux accompagnements IJSS et AT/MP déjà en place plutôt que la vendre seule.</p>
+  </div>
+
+  <h3>Les questions que personne ne veut poser</h3>
+  <div class="qa">
+    <p class="q">Est-ce que ça marche sur les pieds du Pilotage des arrêts longue durée ?</p>
+    <p class="a">Non. PAT porte sur la durée des arrêts et ses effets sur les cotisations, sans traiter de fraude. Ici il s'agit de l'obligation de s'abstenir de toute activité. Deux offres soeurs, pas deux variantes.</p>
+  </div>
+  <div class="qa">
+    <p class="q">Et le volet taux AT/MP ?</p>
+    <p class="a">Il ne passe pas par cette offre. Le taux s'impute sur un coût moyen forfaitaire par catégorie et par secteur, déconnecté des sommes réellement versées, donc rembourser les indemnités ne le modifie pas. La contestation d'imputation existe bel et bien, sans forclusion et même sur une année consolidée, mais sur d'autres motifs, et elle relève de l'offre Cotisations AT/MP. <span class="chip light">Autre porte, vraie piste</span></p>
+  </div>
+  <div class="qa">
+    <p class="q">Qu'est-ce qui n'est pas démontré à ce stade ?</p>
+    <p class="a">Aucune décision ne réunit subrogation et activité non autorisée dans une même affaire, le raisonnement s'appuie sur des arrêts distincts. L'effet d'un retrait rétroactif du caractère professionnel sur l'indemnité d'inaptitude n'est documenté nulle part. Et la fréquence réelle du déclencheur reste inconnue, voir la section 3.</p>
+  </div>
+
+  <h2><span class="num">5</span>FAQ client</h2>
+  <div class="qa">
+    <p class="q">Est-ce que vous enquêtez sur nos salariés ?</p>
+    <p class="a">Non. Nous travaillons sur les sommes, les périodes et les pièces du dossier. L'établissement des faits appartient à la caisse.</p>
+  </div>
+  <div class="qa">
+    <p class="q">Pouvez-vous faire annuler la somme réclamée ?</p>
+    <p class="a">Nous préparons et conduisons les démarches dans les délais applicables. L'issue appartient à la caisse, puis le cas échéant aux instances compétentes.</p>
+  </div>
+  <div class="qa">
+    <p class="q">Que se passe-t-il si nous ne faisons rien ?</p>
+    <p class="a">La somme reste due, et les délais sont courts. Deux mois pour saisir la commission de recours amiable, deux mois pour sa réponse, deux mois ensuite pour le pôle social.</p>
+  </div>
+  <div class="qa">
+    <p class="q">Faut-il arrêter la subrogation ?</p>
+    <p class="a">C'est une décision d'entreprise. Y renoncer déplace le remboursement vers le salarié, et supprime aussi l'intérêt de trésorerie et le confort de paie qui ont motivé la subrogation au départ.</p>
+  </div>
+
+  <h2><span class="num">6</span>Ce qu'on attend de la revue</h2>
+  <p class="section-note">Six décisions, dans l'ordre où elles bloquent la suite.</p>
+
+  <div class="decision">
+    <div class="n">1</div>
+    <div class="body"><strong>La fréquence du déclencheur</strong><span>Trois clients grands comptes, combien de notifications sur vingt-quatre mois. Tranche l'offre.</span></div>
+  </div>
+  <div class="decision">
+    <div class="n">2</div>
+    <div class="body"><strong>Le porteur</strong><span>Sans porteur nommé, rien n'avance au-delà de ce document.</span></div>
+  </div>
+  <div class="decision">
+    <div class="n">3</div>
+    <div class="body"><strong>Le périmètre de livraison</strong><span>Ce qu'Ayming fait exactement, par qui, en combien de temps.</span></div>
+  </div>
+  <div class="decision">
+    <div class="n">4</div>
+    <div class="body"><strong>Le modèle de pricing</strong><span>Forfait par dossier ou rémunération au résultat. La décision la plus dure à changer ensuite.</span></div>
+  </div>
+  <div class="decision">
+    <div class="n">5</div>
+    <div class="body"><strong>Le nom commercial</strong><span>Il doit décrire ce que l'employeur récupère, jamais ce que le salarié aurait fait.</span></div>
+  </div>
+  <div class="decision">
+    <div class="n">6</div>
+    <div class="body"><strong>Le cadre du volet disciplinaire</strong><span>À border avant tout support client, la jurisprudence exige un préjudice réel et distinct.</span></div>
+  </div>
+
+</div>
+</body>
+</html>
